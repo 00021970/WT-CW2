@@ -1,10 +1,19 @@
 const express = require('express');
 const app = express();
+const path = require('path')
 
 const port = 3000;
 
+//Homepage
 app.get('/', (req, res)=>{
-    res.send(`<h1>This web application was created to fulfill Web Technology module's requirements and does not represent an actual company or service</h1>`);
+    res.sendFile(path.join(__dirname, 'public/html/index.html'));
+});
+
+//Specific to do list
+app.get('/:list', (req, res)=>{
+    let listname = req.params.list;
+    console.log(listname)
+    res.sendFile(path.join(__dirname, 'public/html/list.html'))
 });
 
 app.listen(port, ()=>{
