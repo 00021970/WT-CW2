@@ -4,32 +4,36 @@ const path = require('path')
 
 const port = 3000;
 
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'public/views'));
+
 app.use(express.urlencoded({
     extended: true
 }));
 
 //Homepage
 app.get('/', (req, res)=>{
-    res.sendFile(path.join(__dirname, 'public/html/index.html'));
+    res.render('index');
 });
 
 //Create a list
 app.get('/create', (req, res)=>{
-    res.sendFile(path.join(__dirname, 'public/html/create.html'));
+    res.render('create');
 });
 
 app.post('/create', (req, res)=>{
     let listname = req.body.listname;
     let item = req.body.item;
     console.log(listname, item);
-    res.redirect('/create')
+    res.redirect('/create');
 });
 
 //Specific to do list
 app.get('/:list', (req, res)=>{
-    let listname = req.params.list;
-    console.log(listname);
-    res.sendFile(path.join(__dirname, 'public/html/list.html'));
+    res.render('list', {
+        listname: 'Today',
+        items: ['Buy groceries', 'Clean the house', 'Walk the dog']
+    });
 });
 
 app.listen(port, ()=>{
