@@ -11,30 +11,9 @@ app.use(express.urlencoded({
     extended: true
 }));
 
-//Homepage
-app.get('/', (req, res)=>{
-    res.render('index');
-});
-
-//Create a list
-app.get('/create', (req, res)=>{
-    res.render('create');
-});
-
-app.post('/create', (req, res)=>{
-    let listname = req.body.listname;
-    let item = req.body.item;
-    console.log(listname, item);
-    res.redirect('/create');
-});
-
-//Specific to do list
-app.get('/:list', (req, res)=>{
-    res.render('list', {
-        listname: 'Today',
-        items: ['Buy groceries', 'Clean the house', 'Walk the dog']
-    });
-});
+const indexRoute = require('./routes/index');
+const createRoute = require('./routes/create');
+const listRoute = require('./routes/list');
 
 app.listen(port, ()=>{
     console.log(`App running at http://localhost:${port}`);
