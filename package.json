@@ -21,6 +21,7 @@
   "homepage": "https://github.com/00021970/WT-CW2#readme",
   "dependencies": {
     "express": "^5.1.0",
+    "express-validator": "^7.2.1",
     "nodemon": "^3.1.9",
     "pug": "^3.0.3"
   }
