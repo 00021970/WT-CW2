@@ -1,12 +1,19 @@
 const express = require('express');
 const router = express.Router();
 const fs = require('fs');
+const {validationResult} = require('express-validator');
+const {validationRules} = require('../validators/create');
 
 router.get('/', (req, res)=>{
     res.render('create');
 });
 
-router.post('/', (req, res, next)=>{
+router.post('/', validationRules(), (req, res, next)=>{
+    const errors = validationResult(req);
+    if(!errors.isEmpty()){
+        return res.status(400).json({errors: errors.array()});
+    };
+
     let listname = req.body.listname;
     let item = req.body.item;
 
