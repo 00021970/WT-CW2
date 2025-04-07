@@ -5,7 +5,7 @@ router.get('/', (req, res)=>{
     res.render('create');
 });
 
-router.post('/create', (req, res)=>{
+router.post('/', (req, res)=>{
     let listname = req.body.listname;
     let item = req.body.item;
     console.log(listname, item);
