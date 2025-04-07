@@ -15,11 +15,9 @@ app.use(express.urlencoded({
 const indexRoute = require('./routes/index');
 const createRoute = require('./routes/create');
 const listRoute = require('./routes/list');
-const allLists = require('./routes/all-lists')
 
 app.use('/', indexRoute);
 app.use('/create', createRoute);
-app.use('/all-lists', allLists)
 app.use('/:list', listRoute);
 
 app.listen(port, ()=>{
