@@ -1,0 +1,18 @@
+[
+  {
+    "listname": "list name",
+    "item": "list item"
+  },
+  {
+    "listname": "exams",
+    "item": "webtech"
+  },
+  {
+    "listname": "hobbies",
+    "item": "music"
+  },
+  {
+    "listname": "social",
+    "item": "call friend"
+  }
+]
