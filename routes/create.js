@@ -3,6 +3,7 @@ const router = express.Router();
 const fs = require('fs');
 const {validationResult} = require('express-validator');
 const {validationRules} = require('../validators/create');
+const path = require('path');
 
 router.get('/', (req, res)=>{
     res.render('create');
@@ -15,12 +16,9 @@ router.post('/', validationRules(), (req, res, next)=>{
     };
 
     let listname = req.body.listname;
-    let item = req.body.item;
+    let items = req.body.items || [];
 
-    let newList = {
-        listname,
-        item
-    };
+    console.log(listname, items)
 
     fs.readFile('lists.json', 'utf-8', (err, data)=>{
         let lists = [];
@@ -31,6 +29,11 @@ router.post('/', validationRules(), (req, res, next)=>{
             catch(parseErr){
                 return next(parseErr);
             }
+        };
+
+        let newList = {
+            listname: listname,
+            items: items
         };
 
         lists.push(newList);

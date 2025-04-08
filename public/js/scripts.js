@@ -10,16 +10,18 @@ document.addEventListener('DOMContentLoaded', function(){
         };
 
         const listname = document.getElementById('listname').value;
-        const item = document.getElementById('item').value;
+        const items = document.querySelectorAll('input[name="items[]"]');
 
         if(!listname){
             showError('Please enter a valid name', form);
             return;
         };
-        if(!item){
-            showError('Please an item', form);
+        if(items.length === 0){
+            showError('Please add at least one item', form);
             return;
         }
+
+        form.submit();
     });
 });
 
@@ -32,4 +34,13 @@ function showError(message, form){
         form.appendChild(error);
     };
     error.textContent = message;
+};
+
+function addItem(){
+    const itemList = document.getElementById('items-list');
+    const itemInput = document.createElement('input');
+    itemInput.type = 'text';
+    itemInput.name = 'items[]';
+    itemInput.placeholder = `Item ${document.querySelectorAll('input[name="items[]"]').length + 1}`;
+    itemList.appendChild(itemInput);
 };

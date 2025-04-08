@@ -1,18 +1,17 @@
 [
   {
-    "listname": "list name",
-    "item": "list item"
-  },
-  {
     "listname": "exams",
-    "item": "webtech"
+    "items": [
+      "webtech",
+      "imob",
+      "isds"
+    ]
   },
   {
-    "listname": "hobbies",
-    "item": "music"
-  },
-  {
-    "listname": "social",
-    "item": "call friend"
+    "listname": "list name",
+    "items": [
+      "item",
+      "item"
+    ]
   }
 ]

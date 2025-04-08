@@ -7,6 +7,8 @@ const port = 3000;
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(express.json());
 app.use(express.urlencoded({
     extended: true
@@ -18,7 +20,7 @@ const listRoute = require('./routes/list');
 
 app.use('/', indexRoute);
 app.use('/create', createRoute);
-app.use('/:list', listRoute);
+app.use('/list', listRoute);
 
 app.listen(port, ()=>{
     console.log(`App running at http://localhost:${port}`);

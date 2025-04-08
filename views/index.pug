@@ -6,7 +6,9 @@ html(lang="en")
         title To do app
     body 
         h1 This web application was created to fulfill Web Technology module's requirements and does not represent an actual company or service
+        a(href="/create") Create a list
         ul
             each list in lists 
                 li
-                    a(href="/"+list.listname)= list.listname
+                    a(href="/list/"+list.listname)= list.listname
+                    a(href=`/delete/${list.listname}`) Delete  
