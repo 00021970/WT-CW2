@@ -4,6 +4,7 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         script(src='/js/scripts.js')
+        link(rel="stylesheet", href="/css/styles.css")
         title List form
     body 
         - var formAction = list && list.listname ? `/update/${list.listname}` : '/create'
@@ -12,7 +13,7 @@ html(lang="en")
         - var items = list ? list.items : ''
         - var action = list && list.listname ? 'Update' : 'Create'
 
-        h1 #{formTitle}
+        h1#header #{formTitle}
 
         if errors && errors.length
             div.error
@@ -29,4 +30,4 @@ html(lang="en")
                     input(type="text" name="items[]" id="items" value=item placeholder="Enter a list item")
             button(type="button" onclick="addItem()") Add item 
             button(type="submit") #{action}
-        a(href='/') Back to menu
+        a#navitem(href='/') Back to menu

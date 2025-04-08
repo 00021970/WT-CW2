@@ -33,7 +33,6 @@ const Service = {
         };
         
         const lists = allLists();
-        console.log(lists)
         lists.push(newList);
 
         writeToFile(lists);
@@ -65,7 +64,6 @@ const Service = {
             return false;
         }
         lists.splice(index, 1);
-        console.log(lists)
         writeToFile(lists);
         return true;
     }

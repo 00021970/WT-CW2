@@ -3,12 +3,13 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/css/styles.css")
         title To do app
     body 
         h1 This web application was created to fulfill Web Technology module's requirements and does not represent an actual company or service
-        a(href="/create") Create a list
+        a#navitem(href="/create") Create a list
         ul
             each list in lists 
                 li
                     a(href="/list/"+list.listname)= list.listname
-                    a(href=`/delete/${list.listname}`) Delete  
+                a#navitem(href=`/delete/${list.listname}`) Delete  

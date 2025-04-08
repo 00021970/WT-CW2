@@ -3,12 +3,15 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/css/styles.css")
         title #{listname} List
     body 
-        h1 #{listname}
-        ul
-            each item in items 
-                li= item
-        a(href=`/update/`+listname) Update  
-        a(href=`/delete/`+listname) Delete 
-        a(href='/') Back to menu
+        h1#header #{listname}
+        div#list
+            ul
+                each item in items 
+                    li= item
+        div#nav
+            a#navitem(href=`/update/`+listname) Update  
+            a#navitem(href=`/delete/`+listname) Delete 
+            a#navitem(href='/') Back to menu

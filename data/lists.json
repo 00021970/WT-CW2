@@ -15,5 +15,13 @@
             "arms",
             "treadmill"
         ]
+    },
+    {
+        "listname": "social",
+        "items": [
+            "call friend",
+            "buy present",
+            "connect with family"
+        ]
     }
 ]

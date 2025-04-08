@@ -69,7 +69,6 @@ const Controller = {
     delete: (req, res) => {
         try {
             const deleted = Service.delete(req, res);
-            console.log(deleted)
             if (!deleted) {
                 return res.status(404).json({ error: 'List not found' });
             }
