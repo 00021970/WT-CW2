@@ -54,3 +54,6 @@ WT-CW2/
 
 ## Link to repository
 https://github.com/00021970/WT-CW2.git
+
+## Link to hosted website
+wt-cw2-production.up.railway.app
