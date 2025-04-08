@@ -8,23 +8,12 @@
         ]
     },
     {
-        "listname": "list name",
+        "listname": "gym",
         "items": [
-            "item",
-            "item"
-        ]
-    },
-    {
-        "listname": "hobbies",
-        "items": [
-            "drawing",
-            "music"
-        ]
-    },
-    {
-        "listname": "",
-        "items": [
-            " "
+            "cardio",
+            "legs",
+            "arms",
+            "treadmill"
         ]
     }
 ]

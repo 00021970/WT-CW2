@@ -58,13 +58,14 @@ const Service = {
     },
 
     delete(req, res) {
-        const name = req.params.listname;
+        const name = req.params.listName;
         const lists = allLists();
         const index = lists.findIndex(list => list.listname === name);
         if (index === -1) {
             return false;
         }
         lists.splice(index, 1);
+        console.log(lists)
         writeToFile(lists);
         return true;
     }
