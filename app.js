@@ -17,10 +17,14 @@ app.use(express.urlencoded({
 const indexRoute = require('./routes/index');
 const createRoute = require('./routes/create');
 const listRoute = require('./routes/list');
+const updateRoute = require('./routes/update');
+const deleteRoute = require('./routes/delete');
 
 app.use('/', indexRoute);
 app.use('/create', createRoute);
 app.use('/list', listRoute);
+app.use('/update', updateRoute);
+app.use('/delete', deleteRoute);
 
 app.listen(port, ()=>{
     console.log(`App running at http://localhost:${port}`);

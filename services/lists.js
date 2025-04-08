@@ -22,7 +22,6 @@ const Service = {
     getByName(req, res) {
         const name = req.params.listName;
         const requiredlist = allLists().find(list => list.listname === name);
-        console.log(requiredlist)
         return requiredlist;
     },
 
@@ -43,7 +42,7 @@ const Service = {
     },
 
     update(req, res) {
-        const name = req.params.listname;
+        const name = req.params.listName;
         const lists = allLists();
         const index = lists.findIndex(list => list.listname === name);
         if (index === -1) {
@@ -52,7 +51,7 @@ const Service = {
 
         lists[index] = {
             listname: req.body.listname,
-            items: items
+            items: req.body.items
         };
         writeToFile(lists);
         return lists[index];

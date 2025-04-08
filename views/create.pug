@@ -7,11 +7,12 @@ html(lang="en")
         title List form
     body 
         - var formAction = list && list.listname ? `/update/${list.listname}` : '/create'
-        - var formTitle = list && list.listname ? `Update ${list.listname} list` : 'Create list'
+        - var formTitle = list && list.listname ? `Update ${list.listname} list` : `Create list`
         - var listname = list ? list.listname : ''
         - var items = list ? list.items : ''
+        - var action = list && list.listname ? 'Update' : 'Create'
 
-        h1 Create your list 
+        h1 #{formTitle}
 
         if errors && errors.length
             div.error
@@ -23,8 +24,9 @@ html(lang="en")
             label(for="listname") Name 
             input(type="text" name="listname" id="listname" value=listname placeholder="Enter name")
             div#items-list
-                label(for="items") Item 
-                input(type="text" name="items[]" id="items" value=items placeholder="Enter a list item")
+                label(for="items") Items
+                each item, index in items
+                    input(type="text" name="items[]" id="items" value=item placeholder="Enter a list item")
             button(type="button" onclick="addItem()") Add item 
-            button(type="submit") Create
+            button(type="submit") #{action}
         a(href='/') Back to menu

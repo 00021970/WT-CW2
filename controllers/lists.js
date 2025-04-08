@@ -22,6 +22,19 @@ const Controller = {
         }
     },
 
+    getUpdate: (req, res) => {
+        try {
+            const list = Service.getByName(req, res);
+            if (!list) {
+                return res.render('create', { list: { listname: '', items: [] }, formAction: '/create', formTitle: 'Create list' });
+            }
+            res.render('create', {list: list})
+        }
+        catch(error) {
+            res.status(500).json({ error: error.message });
+        }
+    },
+
     create: async (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
