@@ -1,0 +1,24 @@
+[
+    {
+        "listname": "exams",
+        "items": [
+            "webtech",
+            "imob",
+            "isds"
+        ]
+    },
+    {
+        "listname": "list name",
+        "items": [
+            "item",
+            "item"
+        ]
+    },
+    {
+        "listname": "hobbies",
+        "items": [
+            "drawing",
+            "music"
+        ]
+    }
+]

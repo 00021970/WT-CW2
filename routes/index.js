@@ -1,20 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const fs = require('fs');
+const Controller = require('../controllers/lists');
 
-router.get('/', (req, res, next)=>{
-    fs.readFile('lists.json', 'utf-8', (err, data)=>{
-        let lists = [];
-        if(!err){
-            try{
-                lists = data.trim() === '' ? [] : JSON.parse(data);
-            }
-            catch(parseErr){
-                return next(parseErr);
-            }
-        }
-        res.render('index', {lists});
-    });
-});
+router.get('/', Controller.getAll);
 
 module.exports = router;
