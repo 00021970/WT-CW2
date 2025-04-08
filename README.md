@@ -14,5 +14,43 @@ This is a simple app to create to-do lists of topic-based tasks and manage them.
     - pug
     - express-validator
 
+## Project structure
+WT-CW2/
+│
+├── controllers/
+│   └── lists.js
+│
+├── data/
+│   └── lists.json
+│
+├── public/
+│   ├── css/
+│   │   └── styles.css
+│   └── js/
+│       └── scripts.js
+│
+├── routes/
+│   ├── create.js
+│   ├── delete.js
+│   ├── index.js
+│   ├── list.js
+│   └── update.js
+│
+├── services/
+│   └── lists.js
+│
+├── validations/
+│   └── create.js
+│
+├── views/
+│   ├── create.pug
+│   ├── index.pug
+│   └── list.pug
+│
+├── app.js
+├── package-lock.json
+├── package.json
+└── README.md
+
 ## Link to repository
 https://github.com/00021970/WT-CW2.git
